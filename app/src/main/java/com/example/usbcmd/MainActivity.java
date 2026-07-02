@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String ACTION_USB_PERMISSION = "com.example.usbcmd.USB_PERMISSION";
 
     // ⚠️ 통신 속도: 문서에 명시가 없어 9600으로 설정. 응답 없으면 115200 등으로 변경.
-    private static final int BAUD_RATE = 9600;
+    private static final int BAUD_RATE = 57600;
     private static final int WRITE_TIMEOUT_MS = 2000;
 
     private UsbManager usbManager;
