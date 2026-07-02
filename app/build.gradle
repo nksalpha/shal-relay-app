@@ -26,6 +26,16 @@ android {
     }
 }
 
+// [중요] usb-serial-for-android가 끌어오는 구버전 kotlin-stdlib-jdk7/jdk8(1.6.21)와
+// appcompat의 kotlin-stdlib(1.8.22)이 충돌(Duplicate class) → 모두 1.8.22로 정렬
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+    }
+}
+
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     // CH340/FTDI/CP210x 등 USB 시리얼 지원
